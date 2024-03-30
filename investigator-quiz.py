@@ -26,7 +26,7 @@ final_available_investigators = []
 def investigator_quiz():
     global final_available_investigators
     
-    print("Welcome to the Arkham Horror Investigator Personality Quiz!")
+    print("Welcome to the Arkham Horror Investigator Selection Quiz!")
     print("Answer the following questions to discover which investigator best matches your style.\n")
 
     questions = [
