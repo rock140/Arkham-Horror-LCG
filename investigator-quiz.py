@@ -2,9 +2,7 @@ import sys
 import pandas as pd
 import asyncio
 from IPython.display import display, HTML
-from collections import Counter
 from duckduckgo_search import AsyncDDGS
-import gspread
 
 sheet_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbHAB0LLpdPo_9lbh2a-TG_9mIF-gd_cDtPIKWwUlfl3IpKezf_F0FisKkxZao1Qxgf9cJQEuqR3Jd/pub?gid=1668715228&single=true&output=csv"
 csv_url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3dKXeQnL0gMvWZKiEV3ichFA1BHbVnm1X4mjkfdzk4eiFYqFHiMxibc3EYXIhxYWZCO0zUN3GJzuo/pub?output=csv"
@@ -66,7 +64,9 @@ def investigator_quiz():
             for idx, (category, description) in enumerate(category_dict.items(), start=1):
                 option = chr(ord('a') + idx - 1)
                 answer_options.append(option)
-                print(f"   {option}) {description} ({category})")
+                # Check if any investigator exists for this category
+                if any(all_investigators[invest]['category'] == category for invest in available_investigators):
+                    print(f"   {option}) {description} ({category})")
         else:
             # Filter available archetypes based on the filtered investigators
             available_archetypes = set(all_investigators[invest]['archetype'] for invest in available_investigators)
