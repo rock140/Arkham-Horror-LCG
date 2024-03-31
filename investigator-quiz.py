@@ -25,13 +25,13 @@ for index, row in df.iterrows():
 final_available_investigators = []
 
 category_dict = {
-    'Blue Collar Professionals': 'Hard-working individuals with practical skills and trades, often facing the horrors of Arkham in their everyday lives.',
-    'White Collar Professionals': 'Intellectuals, academics, and professionals who delve into the mysteries of the occult and the unknown.',
-    'Scholars and Researchers': 'Dedicated investigators who tirelessly pursue knowledge and study the eldritch secrets lurking in Arkham.',
-    'Artists and Performers': 'Creative souls who channel their talents to confront the terrors of Arkham through art, music, and performance.',
-    'Explorers and Adventurers': 'Fearless adventurers who brave the dark corners of Arkham, seeking out ancient relics and forbidden knowledge.',
-    'Specialists and Consultants': 'Experts in their fields, offering specialized skills and knowledge to combat the supernatural threats that plague Arkham.',
-    'Others': 'Outsiders, misfits, and those with unique perspectives who find themselves drawn into the mysteries of Arkham.'
+    'Blue Collar Professionals': 'I am a hard-working individual with practical skills and trades, often facing the horrors of Arkham in my everyday life.',
+    'White Collar Professionals': 'I am an intellectual, academic, and professional who delves into the mysteries of the occult and the unknown.',
+    'Scholars and Researchers': 'I am a dedicated investigator who tirelessly pursues knowledge and studies the eldritch secrets lurking in Arkham.',
+    'Artists and Performers': 'I am a creative soul who channels my talents to confront the terrors of Arkham through art, music, and performance.',
+    'Explorers and Adventurers': 'I am a fearless adventurer who braves the dark corners of Arkham, seeking out ancient relics and forbidden knowledge.',
+    'Specialists and Consultants': 'I am an expert in my field, offering specialized skills and knowledge to combat the supernatural threats that plague Arkham.',
+    'Others': 'I am an outsider, misfit, or someone with a unique perspective who finds myself drawn into the mysteries of Arkham.'
 }
 
 def investigator_quiz():
@@ -66,7 +66,7 @@ def investigator_quiz():
             for idx, (category, description) in enumerate(category_dict.items(), start=1):
                 option = chr(ord('a') + idx - 1)
                 answer_options.append(option)
-                print(f"   {option}) {category}: {description}")
+                print(f"   {option}) {description} ({category})")
         else:
             # Filter available archetypes based on the filtered investigators
             available_archetypes = set(all_investigators[invest]['archetype'] for invest in available_investigators)
